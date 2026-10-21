@@ -1,0 +1,25 @@
+{
+  "dataset": "sst2",
+  "max_len": 64,
+  "min_freq": 2,
+  "vocab_size": 12705,
+  "vocab_own": 12705,
+  "vocab_from_menyo": 0,
+  "oov_rate_val": 0.0086,
+  "oov_rate_test": 0.0085,
+  "n_train": 47754,
+  "n_val": 10233,
+  "n_test": 10234,
+  "train_counts": {
+    "neg": 21145,
+    "pos": 26609
+  },
+  "val_counts": {
+    "neg": 4531,
+    "pos": 5702
+  },
+  "test_counts": {
+    "neg": 4532,
+    "pos": 5702
+  }
+}

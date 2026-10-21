@@ -1,0 +1,26 @@
+{
+  "dataset": "yosm",
+  "split_type": "official_benchmark",
+  "max_len": 64,
+  "min_freq": 2,
+  "vocab_size": 13255,
+  "vocab_own": 1336,
+  "vocab_from_menyo": 11919,
+  "oov_rate_val": 0.0487,
+  "oov_rate_test": 0.0564,
+  "n_train": 800,
+  "n_val": 200,
+  "n_test": 500,
+  "train_counts": {
+    "neg": 400,
+    "pos": 400
+  },
+  "val_counts": {
+    "neg": 100,
+    "pos": 100
+  },
+  "test_counts": {
+    "neg": 250,
+    "pos": 250
+  }
+}

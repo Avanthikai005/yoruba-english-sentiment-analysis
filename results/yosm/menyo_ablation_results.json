@@ -1,0 +1,30 @@
+{
+  "pure_yosm": {
+    "vocab_size": 1336,
+    "params": 548001,
+    "oov_rate_test": 0.0979,
+    "best_epoch": 5,
+    "train_time_sec": 6.42,
+    "accuracy": 0.818,
+    "precision": 0.7751,
+    "recall": 0.896,
+    "f1": 0.8312
+  },
+  "yosm_plus_menyo": {
+    "vocab_size": 13255,
+    "params": 2931801,
+    "oov_rate_test": 0.0564,
+    "best_epoch": 8,
+    "train_time_sec": 9.85,
+    "accuracy": 0.81,
+    "precision": 0.7541,
+    "recall": 0.92,
+    "f1": 0.8288
+  },
+  "scientific_conclusion": {
+    "avg_yosm_weight_shift": 2.222466,
+    "avg_menyo_weight_shift": 0.103293,
+    "dead_menyo_token_percentage": 0.0,
+    "verdict": "Unsupervised vocabulary expansion with uninitialized embeddings does not constitute cross-lingual transfer learning. 100% of auxiliary tokens that do not appear in the supervised training corpus receive zero gradient updates."
+  }
+}
