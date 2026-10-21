@@ -1,6 +1,6 @@
 # Comparative Study of CNN and CNN–BiLSTM–Attention Models for English and Yoruba Sentiment Classification
 
-**Academic Level:** College End-Semester Deep Learning Project (30 Marks)  
+**Academic Level:** College End-Semester Deep Learning Project  
 **Primary Task:** Binary Sentiment Classification (Negative = 0, Positive = 1)  
 **Languages Evaluated:** English (High-Resource, SST-2) and Yoruba (Low-Resource, YOSM)  
 **Auxiliary Corpus:** MENYO-20k (English–Yoruba parallel text for vocabulary ablation)  
