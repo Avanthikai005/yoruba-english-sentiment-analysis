@@ -175,6 +175,14 @@ Execute all 6 unit and integration tests:
 python test_suite.py
 ```
 
+### 7. Run the Interactive Demo
+Launch a local webpage that loads the saved model checkpoints and predicts the
+sentiment of an English or Yoruba movie review:
+```bash
+streamlit run app.py
+```
+The demo is a sentiment classifier, not an English-to-Yoruba translation tool.
+
 ---
 
 ## 6. Academic Audit & Compliance Notes
