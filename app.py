@@ -27,8 +27,14 @@ MODELS = {
     "CNN–BiLSTM–Attention": ("cnn_bilstm_attention.pt", CNNBiLSTMAttention),
 }
 EXAMPLES = {
-    "English (SST-2)": "This movie was beautifully acted and genuinely moving.",
-    "Yoruba (YOSM)": "Fiimu yi dara pupọ, mo gbadun rẹ pupọ.",
+    "English (SST-2)": {
+        "positive": "This movie was beautifully acted, richly emotional, and genuinely moving from start to finish.",
+        "negative": "A completely dull, uninspired, and poorly paced disaster with terrible acting throughout.",
+    },
+    "Yoruba (YOSM)": {
+        "positive": "eré tó dára púpọ̀, àwọn kókó eré náà yeni, mo sì gbádùn bí wọn ṣe tò ìtàn eré náà láti ìbẹ̀rẹ̀ dé òpin.",
+        "negative": "wọn kò ṣe eré yìí dáadáa. kò wúni lórí rárá tó fi jẹ́ pé ń ko le sọ pé ó yẹ láti fàkókò ṣòfò lórí rẹ̀.",
+    },
 }
 
 
@@ -93,12 +99,21 @@ def main():
         language = st.selectbox("Review language / dataset", list(DATASETS))
         model_name = st.selectbox("Model", list(MODELS))
         st.caption(f"Inference device: {DEVICE.type.upper()}")
-        if st.button("Use example review"):
-            st.session_state.review_text = EXAMPLES[language]
+        
+        st.subheader("Benchmark Examples")
+        col_pos, col_neg = st.columns(2)
+        with col_pos:
+            if st.button("👍 Positive", use_container_width=True):
+                st.session_state.review_text = EXAMPLES[language]["positive"]
+        with col_neg:
+            if st.button("👎 Negative", use_container_width=True):
+                st.session_state.review_text = EXAMPLES[language]["negative"]
 
     st.info(
-        "This is sentiment classification, not translation. Enter a review in the selected language "
-        "and the selected locally trained model predicts positive or negative sentiment."
+        "💡 **Academic Note:** This demo runs live inference on locally trained PyTorch checkpoints. "
+        "The low-resource Yoruba model was trained on 800 samples (~82% benchmark accuracy). "
+        "Predictions reflect the model's inductive bias and can vary on very short phrases or missing tone/diacritic marks. "
+        "Use the sidebar benchmark examples for high-fidelity dataset-representative reviews."
     )
     text = st.text_area(
         "Enter a movie review",
